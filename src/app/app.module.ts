@@ -9,7 +9,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TrendingMovieComponent } from './components/trending-movie/trending-movie.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { UpComingMoviesComponent } from './components/up-coming-movies/up-coming-movies.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import {HttpClientModule} from '@angular/common/http'
     NavbarComponent,
     TrendingMovieComponent,
     MovieCardComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    UpComingMoviesComponent
   ],
   imports: [
     BrowserModule,

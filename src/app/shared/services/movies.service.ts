@@ -13,4 +13,9 @@ export class MoviesService {
       `https://api.themoviedb.org/3/trending/movie/week?api_key=a345db2a6ddf1f70a491f3cb5bca88d5`
     );
   }
+  upComingMovies(): Observable<any> {
+    return this._httpClient.get(
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=a345db2a6ddf1f70a491f3cb5bca88d5`
+    );
+  }
 }

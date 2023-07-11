@@ -17,6 +17,8 @@ export class TrendingMovieComponent implements OnInit {
         this.movies = res.results
         this.trendingMovies = res.results
         console.log(this.trendingMovies);
+        console.log(this.trendingMovies.poster_path);
+
       },
       error: (err) => {
         console.log(err);
