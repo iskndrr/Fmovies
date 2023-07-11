@@ -1,10 +1,12 @@
 .carousel-item{
   background-image: url(../../../assets/images/2.jpg);
-  height: 80dvh;
-  // background-position:  center;
+  height: 75dvh;
+  background-position:  center top;
   background-size: cover;
-  box-shadow: inset 1920px 1080px 10px rgba(0,0,0,0.5);
+  // box-shadow: inset 1920px 1080px 10px rgba(0,0,0,0.5);
+
 }
-.carousel{
-  min-height: 100vh;
+
+.layer{
+  background-color: rgba(0, 0, 0, .8);
 }

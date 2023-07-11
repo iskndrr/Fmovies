@@ -1,1 +1,18 @@
-<p>movie-card works!</p>
+<div class="card bg-transparent border border-0">
+  <div class="position-relative img">
+    <div class="layer d-flex justify-content-center align-items-center ">
+      <i class="fa-solid  fa-circle-play" style="color: #00acc1 " ></i>
+    </div>
+    <img [src]="'//image.tmdb.org/t/p/w500/'+movie.poster_path" class="card-img-top" alt="" />
+  </div>
+  <div class="card-body px-0 text-white">
+    <h6 class="m-0">{{movie.title.split('').splice(0,25).join('')}}</h6>
+    <div
+      class="d-flex my-2 text-white-50 justify-content-between align-items-center"
+    >
+      <span>{{movie.release_date.split('-').splice(0,1).join('')}}</span>
+      <span class="">150m</span>
+      <span class="border px-1">Movie</span>
+    </div>
+  </div>
+</div>
