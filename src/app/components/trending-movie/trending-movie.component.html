@@ -1,27 +1,9 @@
 <div class="container mt-3 mb-5">
-  <div class="heading row align-items-center my-3">
-    <div
-      class="col-md-12 d-flex  align-items-center"
-    >
-      <h2 class="m-0 pb-1 me-4 text-white">Trending</h2>
-      <div>
-        <button class="btn text-white me-2 btn-info">
-          <span>
-            <i class="fa-solid fa-circle-play"></i>
-          </span>
-          Movies
-        </button>
-        <button class="btn text-white btn-secondary">
-          <span>
-            <i class="fa-solid fa-bars"></i>          </span>
-          TV Shows
-        </button>
-      </div>
-    </div>
-  </div>
+  
   <div class="row gy-4 ">
     <div *ngFor="let movie of movies.slice(0,18)" class="col-lg-2 col-6">
       <app-movie-card [movie]="movie"></app-movie-card>
+
     </div>
   </div>
 </div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="heading row align-items-center my-3">
+    <div class="col-md-12 d-flex align-items-center">
+      <h2 class="m-0 pb-1 me-4 text-white">Trending</h2>
+      <div>
+        <button (click)="isMovie = true" class="btn text-white me-2 btn-info">
+          <span>
+            <i class="fa-solid fa-circle-play"></i>
+          </span>
+          Movies
+        </button>
+        <button (click)="isMovie = false" class="btn text-white btn-secondary">
+          <span> <i class="fa-solid fa-bars"></i> </span>
+          TV Shows
+        </button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isMovie">
+
+    <app-trending-movie></app-trending-movie>
+  </div>
+  <div *ngIf="!isMovie">
+
+    <app-trending-tv></app-trending-tv>
+  </div>
+</div>

@@ -4,15 +4,28 @@ import { HomeComponent } from './components/home/home.component';
 import { Title } from '@angular/platform-browser';
 import { TrendingMovieComponent } from './components/trending-movie/trending-movie.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { TrendingComponent } from './components/trending/trending.component';
 
-const routes: Routes = [{path : '', redirectTo:"/home",pathMatch:"full"},
-  {path:"home", component:HomeComponent , title:"Home"},
-  {path:"trendingMovies", component:TrendingMovieComponent , title:"Trending Movies"},
-  {path:"details/:id", component:MovieDetailsComponent , title:"Details"},
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, title: 'Home' },
+  { path: 'details/:id', component: MovieDetailsComponent, title: 'Details' },
+  {
+    path: 'trending',
+    component: TrendingComponent,
+    children: [
+      { path: '', redirectTo: 'trending/trendingMovies', pathMatch: "prefix" },
+      {
+        path: 'trendingMovies',
+        component: TrendingMovieComponent,
+        title: 'Trending Movies',
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

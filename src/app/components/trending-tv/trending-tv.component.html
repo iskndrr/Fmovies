@@ -1,0 +1,9 @@
+<div class="container mt-3 mb-5">
+
+  <div class="row gy-4 ">
+    <div *ngFor="let tv of TvShow.slice(0,18)" class="col-lg-2 col-6">
+      <app-tv-card [tv]="tv"> </app-tv-card>
+
+    </div>
+  </div>
+</div>

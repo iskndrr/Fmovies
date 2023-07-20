@@ -16,6 +16,9 @@ import { VgControlsModule } from '@videogular/ngx-videogular/controls';
 import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
 import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { VidPlayerComponent } from './components/vid-player/vid-player.component';
+import { TrendingComponent } from './components/trending/trending.component';
+import { TrendingTvComponent } from './components/trending-tv/trending-tv.component';
+import { TvCardComponent } from './components/tv-card/tv-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,9 @@ import { VidPlayerComponent } from './components/vid-player/vid-player.component
     MovieDetailsComponent,
     UpComingMoviesComponent,
     VidPlayerComponent,
+    TrendingComponent,
+    TrendingTvComponent,
+    TvCardComponent,
 
   ],
   imports: [
