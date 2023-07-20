@@ -1,0 +1,32 @@
+h2::after {
+  content: "";
+  position: absolute;
+  width: 35%;
+  height: .1rem;
+  border-radius: 50%;
+  background-color: rgb(193, 193, 193);
+  top: 100%;
+  left: 0;
+
+}
+
+h2 {
+  position: relative;
+}
+.layer {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+// #00ACC1
+.card i {
+  font-size: 4rem;
+}
+.img:hover .layer {
+  opacity: 1;
+  transition: all .5s ease-in-out;
+}

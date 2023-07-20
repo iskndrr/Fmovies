@@ -1,1 +1,154 @@
-<p>movie-details works!</p>
+<!-- <app-vid-player></app-vid-player> -->
+<div class="container my-5">
+  <div class="details py-5">
+    <div class="row gy-4">
+      <div class="col-md-2">
+        <div class="card">
+          <img
+            [src]="'//image.tmdb.org/t/p/w500/' + details.poster_path"
+            class="w-100 card-img-top"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="d-flex justify-content-between">
+          <div class="title lh-lg w-50 text-white">
+            <h3 class="">{{ details.title }}</h3>
+            <div
+              class="d-flex text-white-50 justify-content-between align-items-center w-100"
+            >
+              <span class="bg-info px-1 rounded fw-bold text-dark">HD</span>
+              <span class=""
+                ><i class="fa-solid fa-heart"></i>
+                {{ details.vote_count }}</span
+              >
+              <span class="">124min</span>
+            </div>
+          </div>
+          <div class="rating text-center ms-auto text-white">
+            <span class="fs-5"
+              >Score:<span class="text-warning">{{
+                details.vote_average.toFixed(1)
+              }}</span></span
+            >
+            <span class="small text-white-50">
+              / {{ details.vote_count }} rated</span
+            >
+            <div class="d-flex my-1 justify-content-between">
+              <button class="btn me-3 btn-light rounded">Like</button>
+              <button class="btn btn-danger rounded">DisLike</button>
+            </div>
+          </div>
+        </div>
+        <div class="info text-white-50 my-4">
+          <p>
+            {{ details.overview }}
+          </p>
+          <table
+            class="table-borderless text-white-50 table-responsive table-striped table-hover table-dark table"
+          >
+            <tbody class="bg-danger">
+              <tr>
+                <th scope="row">Country:</th>
+                <td>
+                  <span
+                    class="me-2"
+                    *ngFor="let country of details.production_countries"
+                    >{{ country.name }}</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Genre:</th>
+                <td>
+                  <span class="me-2" *ngFor="let genre of details.genres">{{
+                    genre.name
+                  }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Released:</th>
+                <td>{{ details.release_date }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Production:</th>
+                <!-- <td colspan="2">Larry the Bird</td> -->
+                <td>
+                  <span
+                    class="me-2"
+                    *ngFor="let production of details.production_companies"
+                    >{{ production.name }}</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Budget:</th>
+                <!-- <td colspan="2">Larry the Bird</td> -->
+                <td>
+                  {{ details.budget | currency }}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Revenue:</th>
+                <!-- <td colspan="2">Larry the Bird</td> -->
+                <td>
+                  {{ details.revenue | currency }}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Tags:</th>
+                <!-- <td colspan="2">Larry the Bird</td> -->
+                <td>
+                  {{ details.tagline }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <h2 class="m-0 mb-4 pb-2 me-4 text-white">You May Also Like</h2>
+        <div class="row gy-4">
+          <div *ngFor="let movie of similarMovies.slice(0, 9)" class="col-4">
+            <div (click)="detlInDetails(movie.id)" class="card bg-transparent border border-0">
+              <div class="position-relative img">
+                <div class="layer d-flex justify-content-center align-items-center">
+                  <i class="fa-solid fa-circle-play" style="color: #00acc1"></i>
+                </div>
+                <div class="">
+                  <img
+                    [src]="'//image.tmdb.org/t/p/w500/' + movie.poster_path"
+                    class="card-img-top"
+                    alt=""
+                  />
+                <span class="position-absolute end-0 p-1 rounded-1 bg-warning text-white top-0">{{movie.vote_average.toFixed(1)}}</span>
+
+                </div>
+              </div>
+              <div class="card-body px-0 text-white">
+                <h6 class="m-0 text-nowrap overflow-hidden ">{{ movie.title.split("").splice(0, 25).join("") }}</h6>
+                <div
+                  class="d-flex my-2 text-white-50 justify-content-between align-items-center"
+                >
+                  <span>{{ movie.release_date.split("-").splice(0, 1).join("") }}</span>
+                  <span class="">150m</span>
+                  <span class="border px-1">Movie</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+Country:
+Genre:
+Released:
+Production:
+Casts:
+Tags:
+-->

@@ -1,10 +1,67 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Details } from 'src/app/shared/interface/details';
+import { TrendingMovies } from 'src/app/shared/interface/trending-movies';
+import { DetailsService } from 'src/app/shared/services/details.service';
+import { MoviesService } from 'src/app/shared/services/movies.service';
 
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
-  styleUrls: ['./movie-details.component.scss']
+  styleUrls: ['./movie-details.component.scss'],
 })
-export class MovieDetailsComponent {
+export class MovieDetailsComponent implements OnInit {
+  movieId: any = '';
+  constructor(
+    private _detailsService: DetailsService,
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router
+  ) {}
 
+  movies: [] = [];
+  similarMovies: any;
+  movieDetails: [] = [];
+  details: Details = {} as Details;
+
+  ngOnInit(): void {
+    this.getId();
+    // this.getDetails();
+  }
+  getId() {
+    this._activatedRoute.paramMap.subscribe({
+      next: (res: any) => {
+        this.movieId = res.params.id;
+        console.log(this.movieId);
+        this.detlInDetails(this.movieId)
+      },
+    });
+  }
+  detlInDetails(id: any) {
+    this.goDetails(id);
+    this._detailsService.similarMovie(id).subscribe({
+      next: (res) => {
+        this.similarMovies = res.results.filter(
+          (x: any) => x.poster_path !== null
+        );
+        this.movies = this.similarMovies;
+        console.log(this.similarMovies);
+        console.log(this.movies);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+    this._detailsService.getDetails(id).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.movieDetails = res;
+        this.details = res;
+        console.log(this.details);
+      },
+    });
+  }
+
+  goDetails(id: any) {
+    this._router.navigate([`/details/${id}`]);
+  }
 }

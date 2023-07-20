@@ -1,9 +1,9 @@
-<div class="card bg-transparent border border-0">
+<div (click)="goDetails(movie.id)" class="card bg-transparent border border-0">
   <div class="position-relative img">
     <div class="layer d-flex justify-content-center align-items-center">
       <i class="fa-solid fa-circle-play" style="color: #00acc1"></i>
     </div>
-    <div class="position-relative">
+    <div class="">
       <img
         [src]="'//image.tmdb.org/t/p/w500/' + movie.poster_path"
         class="card-img-top"
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="card-body px-0 text-white">
-    <h6 class="m-0">{{ movie.title.split("").splice(0, 25).join("") }}</h6>
+    <h6 class="m-0 text-nowrap overflow-hidden ">{{ movie.title.split("").splice(0, 25).join("") }}</h6>
     <div
       class="d-flex my-2 text-white-50 justify-content-between align-items-center"
     >

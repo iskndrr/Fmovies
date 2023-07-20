@@ -11,6 +11,11 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import {HttpClientModule} from '@angular/common/http';
 import { UpComingMoviesComponent } from './components/up-coming-movies/up-coming-movies.component'
+import { VgCoreModule } from '@videogular/ngx-videogular/core';
+import { VgControlsModule } from '@videogular/ngx-videogular/controls';
+import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
+import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
+import { VidPlayerComponent } from './components/vid-player/vid-player.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +25,18 @@ import { UpComingMoviesComponent } from './components/up-coming-movies/up-coming
     TrendingMovieComponent,
     MovieCardComponent,
     MovieDetailsComponent,
-    UpComingMoviesComponent
+    UpComingMoviesComponent,
+    VidPlayerComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
 
   ],
   providers: [],
