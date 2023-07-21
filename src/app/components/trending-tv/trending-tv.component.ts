@@ -11,6 +11,8 @@ import { TvShowService } from 'src/app/shared/services/tv-show.service';
 export class TrendingTvComponent implements OnInit {
   constructor(private _moviesService: TvShowService) {}
   TvShow: [] = [];
+  type:string = 'tv'
+
   trendingTv: any;
   ngOnInit(): void {
     this._moviesService.getTrendingTvBerWeek().subscribe({

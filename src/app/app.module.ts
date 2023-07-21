@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TrendingMovieComponent } from './components/trending-movie/trending-movie.component';
-import { MovieCardComponent } from './components/movie-card/movie-card.component';
+// import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import {HttpClientModule} from '@angular/common/http';
 import { UpComingMoviesComponent } from './components/up-coming-movies/up-coming-movies.component'
@@ -18,9 +18,11 @@ import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { VidPlayerComponent } from './components/vid-player/vid-player.component';
 import { TrendingComponent } from './components/trending/trending.component';
 import { TrendingTvComponent } from './components/trending-tv/trending-tv.component';
-import { TvCardComponent } from './components/tv-card/tv-card.component';
+// import { TvCardComponent } from './components/tv-card/tv-card.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { TvShowComponent } from './components/tv-show/tv-show.component';
+import { TopImdbComponent } from './components/top-imdb/top-imdb.component';
+import { CardComponent } from './components/card/card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,15 +30,17 @@ import { TvShowComponent } from './components/tv-show/tv-show.component';
     HeaderComponent,
     NavbarComponent,
     TrendingMovieComponent,
-    MovieCardComponent,
+    // MovieCardComponent,
     MovieDetailsComponent,
     UpComingMoviesComponent,
     VidPlayerComponent,
     TrendingComponent,
     TrendingTvComponent,
-    TvCardComponent,
+    // TvCardComponent,
     MoviesComponent,
     TvShowComponent,
+    TopImdbComponent,
+    CardComponent,
 
   ],
   imports: [

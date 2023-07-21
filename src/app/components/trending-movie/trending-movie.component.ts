@@ -10,6 +10,7 @@ import { MoviesService } from 'src/app/shared/services/movies.service';
 export class TrendingMovieComponent implements OnInit {
   constructor(private _moviesService: MoviesService) {}
   movies:[] = []
+  type:string = 'movie'
   trendingMovies: TrendingMovies = {} as TrendingMovies;
   ngOnInit(): void {
     this._moviesService.getTrendingMoviesBerWeek().subscribe({

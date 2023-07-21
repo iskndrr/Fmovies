@@ -11,6 +11,8 @@ import { TvShowService } from 'src/app/shared/services/tv-show.service';
 export class TvShowComponent implements OnInit {
   pages: number[] = [];
   tvShows: [] = [];
+  type:string = 'tv'
+
   tv: TrendingMovies = {} as TrendingMovies;
   constructor(private _tvShow: TvShowService) {
     this.pages = new Array(10).fill('').map((x, index) => index + 1);

@@ -7,6 +7,7 @@ import { TrendingMovieComponent } from './components/trending-movie/trending-mov
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { TrendingComponent } from './components/trending/trending.component';
 import { TvShowComponent } from './components/tv-show/tv-show.component';
+import { TopImdbComponent } from './components/top-imdb/top-imdb.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'details/:id/:mediaType', component: MovieDetailsComponent, title: 'Details' },
   { path: 'movies', component: MoviesComponent, title: 'Popular Movies' },
   { path: 'tvShow', component: TvShowComponent, title: 'Popular Shows' },
+  { path: 'TopIMDB', component: TopImdbComponent, title: 'Popular TopIMDB' },
 
 ];
 

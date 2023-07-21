@@ -21,7 +21,8 @@
   </div>
   <div class="row gy-4 ">
     <div *ngFor="let movie of movies.slice(0,18)" class="col-lg-2 col-6">
-      <app-movie-card [movie]="movie"></app-movie-card>
+      <!-- <app-movie-card [movie]="movie"></app-movie-card> -->
+      <app-card [movie]="movie"></app-card>
     </div>
   </div>
 </div>

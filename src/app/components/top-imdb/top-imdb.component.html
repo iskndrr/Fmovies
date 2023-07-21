@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2" *ngFor="let movie of movies.slice(0, 18)">
+      <app-card [typeTv]="typeTv" [type]="type" [movie]="movie"></app-card>
+    </div>
+  </div>
+</div>

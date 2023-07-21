@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MovieCardComponent } from './movie-card.component';
+import { TopImdbComponent } from './top-imdb.component';
 
-describe('MovieCardComponent', () => {
-  let component: MovieCardComponent;
-  let fixture: ComponentFixture<MovieCardComponent>;
+describe('TopImdbComponent', () => {
+  let component: TopImdbComponent;
+  let fixture: ComponentFixture<TopImdbComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MovieCardComponent]
+      declarations: [TopImdbComponent]
     });
-    fixture = TestBed.createComponent(MovieCardComponent);
+    fixture = TestBed.createComponent(TopImdbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
