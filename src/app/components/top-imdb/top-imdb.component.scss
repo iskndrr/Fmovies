@@ -1,0 +1,28 @@
+h2::after {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: .1rem;
+  border-radius: 50%;
+  background-color: rgb(193, 193, 193);
+  top: 100%;
+  left: 0;
+
+}
+
+h2 {
+  position: relative;
+}
+
+.page-link{
+  background-color: transparent !important;
+  color: #fff;
+  &:hover{
+    color: #000;
+    background-color: #fff !important;
+    cursor: pointer;
+  }
+}
+i,i span{
+  font-size: .7rem !important;
+}
