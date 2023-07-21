@@ -16,11 +16,12 @@ const routes: Routes = [
   { path: 'movies', component: MoviesComponent, title: 'Popular Movies' },
   { path: 'tvShow', component: TvShowComponent, title: 'Popular Shows' },
   { path: 'TopIMDB', component: TopImdbComponent, title: 'Popular TopIMDB' },
+  { path: '**', component: HomeComponent, title: 'home' },
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash:true})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
