@@ -19,8 +19,9 @@ export class TvCardComponent {
   @Input() tv: TvShow = {} as TvShow;
   @Input() det: any ;
 
-  goDetails(id: any) {
-    this._router.navigate([`/details/${id}`]);
+  goDetails(id: any,media_type:string) {
+    this._router.navigate([`/details/${id}/${media_type}`]);
   }
 
 }
+9

@@ -14,7 +14,8 @@
       <div class="col-md-5">
         <div class="d-flex justify-content-between">
           <div class="title lh-lg w-50 text-white">
-            <h3 class="">{{ details.title }}</h3>
+            <h3 *ngIf="details.title" class="">{{ details.title}}</h3>
+            <h3 *ngIf="details.name" class="">{{ details.name}}</h3>
             <div
               class="d-flex text-white-50 justify-content-between align-items-center w-100"
             >
@@ -49,7 +50,7 @@
             class="table-borderless text-white-50 table-responsive table-striped table-hover table-dark table"
           >
             <tbody class="bg-danger">
-              <tr>
+              <tr  *ngIf="details.production_countries">
                 <th scope="row">Country:</th>
                 <td>
                   <span
@@ -59,7 +60,7 @@
                   >
                 </td>
               </tr>
-              <tr>
+              <tr *ngIf="details.genres">
                 <th scope="row">Genre:</th>
                 <td>
                   <span class="me-2" *ngFor="let genre of details.genres">{{
@@ -67,11 +68,12 @@
                   }}</span>
                 </td>
               </tr>
-              <tr>
+              <tr *ngIf="details.release_date || details.first_air_date">
                 <th scope="row">Released:</th>
-                <td>{{ details.release_date }}</td>
+                <td *ngIf="details.release_date ">{{ details.release_date }}</td>
+                <td *ngIf="details.first_air_date">{{ details.first_air_date }}</td>
               </tr>
-              <tr>
+              <tr *ngIf="details.production_companies">
                 <th scope="row">Production:</th>
                 <!-- <td colspan="2">Larry the Bird</td> -->
                 <td>
@@ -82,25 +84,43 @@
                   >
                 </td>
               </tr>
-              <tr>
+              <tr *ngIf="details.created_by">
+                <th scope="row">created by:</th>
+                <!-- <td colspan="2">Larry the Bird</td> -->
+                <td>
+                  <span
+                    class="me-2"
+                    *ngFor="let created_by of details.created_by"
+                    >{{ created_by.name }}</span
+                  >
+                </td>
+              </tr>
+              <tr *ngIf=" details.budget">
                 <th scope="row">Budget:</th>
                 <!-- <td colspan="2">Larry the Bird</td> -->
                 <td>
                   {{ details.budget | currency }}
                 </td>
               </tr>
-              <tr>
+              <tr *ngIf=" details.revenue">
                 <th scope="row">Revenue:</th>
                 <!-- <td colspan="2">Larry the Bird</td> -->
                 <td>
                   {{ details.revenue | currency }}
                 </td>
               </tr>
-              <tr>
+              <tr *ngIf="details.tagline">
                 <th scope="row">Tags:</th>
                 <!-- <td colspan="2">Larry the Bird</td> -->
                 <td>
                   {{ details.tagline }}
+                </td>
+              </tr>
+              <tr *ngIf="details.in_production">
+                <th scope="row">inProduction:</th>
+                <!-- <td colspan="2">Larry the Bird</td> -->
+                <td>
+                  {{ details.in_production }}
                 </td>
               </tr>
             </tbody>
@@ -122,18 +142,21 @@
                     class="card-img-top"
                     alt=""
                   />
-                <span class="position-absolute end-0 p-1 rounded-1 bg-warning text-white top-0">{{movie.vote_average.toFixed(1)}}</span>
+                <!-- <span class="position-absolute end-0 p-1 rounded-1 bg-warning text-white top-0">{{movie.vote_average.toFixed(1)}}</span> -->
 
                 </div>
               </div>
               <div class="card-body px-0 text-white">
-                <h6 class="m-0 text-nowrap overflow-hidden ">{{ movie.title.split("").splice(0, 25).join("") }}</h6>
+                <h6 *ngIf="movie.title" class="m-0 text-nowrap overflow-hidden ">{{ movie.title.split("").splice(0, 25).join("") }}</h6>
+                <h6 *ngIf="movie.name" class="m-0 text-nowrap overflow-hidden ">{{ movie.name.split("").splice(0, 25).join("") }}</h6>
                 <div
                   class="d-flex my-2 text-white-50 justify-content-between align-items-center"
                 >
-                  <span>{{ movie.release_date.split("-").splice(0, 1).join("") }}</span>
+                  <span *ngIf="movie.release_date">{{ movie.release_date.split("-").splice(0, 1).join("") }}</span>
+                  <span *ngIf="movie.first_air_date">{{ movie.first_air_date.split("-").splice(0, 1).join("") }}</span>
                   <span class="">150m</span>
-                  <span class="border px-1">Movie</span>
+                  <span *ngIf="movie.title" class="border px-1">Movie</span>
+                  <span *ngIf="movie.name" class="border px-1">Tv</span>
                 </div>
               </div>
             </div>

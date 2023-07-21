@@ -23,10 +23,16 @@ export class MovieCardComponent {
   details: Details = {} as Details;
 
   @Input() movie: TrendingMovies = {} as TrendingMovies;
-  @Input() det: any ;
+  @Input() det: any;
 
-  goDetails(id: any) {
-    this._router.navigate([`/details/${id}`]);
+  goDetails(id: any, media_type: string) {
+    console.log(id);
+    console.log(media_type);
+    if (media_type != undefined) {
+      this._router.navigate([`/details/${id}/${media_type}`]);
+    }else{
+      this._router.navigate(['/home'])
+    }
   }
 
   // getDetails() {

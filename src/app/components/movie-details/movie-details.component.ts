@@ -12,6 +12,8 @@ import { MoviesService } from 'src/app/shared/services/movies.service';
 })
 export class MovieDetailsComponent implements OnInit {
   movieId: any = '';
+  media_type:string=''
+  type: any = '';
   constructor(
     private _detailsService: DetailsService,
     private _activatedRoute: ActivatedRoute,
@@ -25,20 +27,24 @@ export class MovieDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getId();
-    // this.getDetails();
   }
   getId() {
     this._activatedRoute.paramMap.subscribe({
       next: (res: any) => {
         this.movieId = res.params.id;
-        console.log(this.movieId);
-        this.detlInDetails(this.movieId)
+        this.media_type = res.params.mediaType;
+        console.log(res);
+        this.detlInDetails(this.movieId);
       },
     });
+    // let {id,media_type}= this._activatedRoute.snapshot.params
+    // this.detlInDetails(id,media_type);
+
+
   }
-  detlInDetails(id: any) {
-    this.goDetails(id);
-    this._detailsService.similarMovie(id).subscribe({
+  detlInDetails(id:any) {
+    this.goDetails(id,this.media_type);
+    this._detailsService.similarMovie(id,this.media_type).subscribe({
       next: (res) => {
         this.similarMovies = res.results.filter(
           (x: any) => x.poster_path !== null
@@ -51,7 +57,7 @@ export class MovieDetailsComponent implements OnInit {
         console.log(err);
       },
     });
-    this._detailsService.getDetails(id).subscribe({
+    this._detailsService.getDetails(id,this.media_type).subscribe({
       next: (res) => {
         console.log(res);
         this.movieDetails = res;
@@ -61,7 +67,7 @@ export class MovieDetailsComponent implements OnInit {
     });
   }
 
-  goDetails(id: any) {
-    this._router.navigate([`/details/${id}`]);
+  goDetails(id: any,media_type:string) {
+    this._router.navigate([`/details/${id}/${media_type}`]);
   }
 }

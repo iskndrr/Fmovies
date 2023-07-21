@@ -9,7 +9,7 @@ import { TrendingComponent } from './components/trending/trending.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, title: 'Home' },
-  { path: 'details/:id', component: MovieDetailsComponent, title: 'Details' },
+  { path: 'details/:id/:mediaType', component: MovieDetailsComponent, title: 'Details' },
   {
     path: 'trending',
     component: TrendingComponent,
