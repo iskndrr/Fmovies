@@ -28,5 +28,10 @@ export class MoviesService {
       `https://api.themoviedb.org/3/movie/${id}/videos?api_key=a345db2a6ddf1f70a491f3cb5bca88d5`
     );
   }
+  popularMovies(pageNumber:number): Observable<any> {
+    return this._httpClient.get(
+      `https://api.themoviedb.org/3/movie/popular?api_key=a345db2a6ddf1f70a491f3cb5bca88d5&page=${pageNumber}`
+    );
+  }
 
 }

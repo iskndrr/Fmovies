@@ -19,6 +19,8 @@ import { VidPlayerComponent } from './components/vid-player/vid-player.component
 import { TrendingComponent } from './components/trending/trending.component';
 import { TrendingTvComponent } from './components/trending-tv/trending-tv.component';
 import { TvCardComponent } from './components/tv-card/tv-card.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import { TvShowComponent } from './components/tv-show/tv-show.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { TvCardComponent } from './components/tv-card/tv-card.component';
     TrendingComponent,
     TrendingTvComponent,
     TvCardComponent,
+    MoviesComponent,
+    TvShowComponent,
 
   ],
   imports: [

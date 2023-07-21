@@ -1,7 +1,21 @@
-<nav class="navbar navbar-expand-md  position-absolute top-0 w-100 bg-transparent  navbar-dark">
+<nav
+  class="navbar navbar-expand-md  w-100  navbar-dark"
+>
   <div class="container">
-    <a class="navbar-brand text-white bg-info fw-bold fs-3 px-2" routerLink="/home">Fmovies</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a
+      class="navbar-brand text-white bg-info fw-bold fs-3 px-2"
+      routerLink="/home"
+      >Fmovies</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -9,29 +23,105 @@
         <li class="nav-item me-2">
           <a class="nav-link active" aria-current="page" routerLink="">Home</a>
         </li>
-        <li class="nav-item me-2">
+        <!-- <li class="nav-item me-2">
           <a class="nav-link" routerLink="">Genre</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="true"
+          >
+            Genre
+          </a>
+          <div class="dropdown-menu-dark  dropdown-menu">
+            <div class="row">
+              <div class="col-6">
+                <li><a class="dropdown-item " href="#">Action</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Adventure</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Animation</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Comedy</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Crime</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Documentary</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Drama</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Family</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Fantasy</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">History</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Horror</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Music</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Mystery</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Romance</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Science Fiction</a></li>
+              </div>
+
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Thriller</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">War</a></li>
+              </div>
+              <div class="col-6">
+                <li><a class="dropdown-item" href="#">Western</a></li>
+              </div>
+
+            </div>
+          </div>
         </li>
+
         <li class="nav-item me-2">
           <a class="nav-link" routerLink="">Country</a>
         </li>
         <li class="nav-item me-2">
-          <a class="nav-link" routerLink="">Movies</a>
+          <a class="nav-link" routerLink="/movies">Movies</a>
         </li>
         <li class="nav-item me-2">
-          <a class="nav-link" routerLink="">TvShows</a>
+          <a class="nav-link" routerLink="/tvShow">TvShows</a>
         </li>
         <li class="nav-item me-2">
           <a class="nav-link" routerLink="">TopIMDB</a>
         </li>
-
       </ul>
-      <form class="d-flex w-50 mx-auto" role="search">
-        <input class="form-control bg-transparent " type="search" placeholder="Search" aria-label="Search">
-      </form>
+      <!-- <form class="d-flex w-50 mx-auto" role="search">
+        <input
+          class="form-control bg-transparent"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </form> -->
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item me-2">
-          <a class="nav-link" routerLink="">LogIn</a>
+          <a class="nav-link text-info disabled" routerLink="">LogIn</a>
         </li>
       </ul>
     </div>

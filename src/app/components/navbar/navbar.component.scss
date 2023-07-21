@@ -1,6 +1,11 @@
 nav{
   z-index: 9999999;
+  background-color: #111111 !important;
 }
 ::placeholder{
   color: white;
+}
+.dropdown-menu-dark{
+  width: 20rem !important;
+  // background-color: aqua !important;
 }

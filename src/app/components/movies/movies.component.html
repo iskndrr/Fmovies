@@ -1,0 +1,60 @@
+<div class="container my-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="">
+      <h2 class="m-0 pb-1 me-4 text-white">Popular Movies
+      </h2>
+    </div>
+    <button class="btn btn-secondary">
+      <i class="fa-solid fa-filter"></i><span> Filter</span>
+    </button>
+  </div>
+  <div class="d-flex my-4 justify-content-center align-items-center">
+    <nav class=" " aria-label="Page navigation example">
+      <ul class="pagination m-0">
+        <!-- <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li> -->
+        <li class="page-item" *ngFor="let page of pages" (click)="getMovies(page)">
+          <a class="page-link" >{{page}}</a>
+        </li>
+
+        <!-- <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li> -->
+      </ul>
+    </nav>
+  </div>
+  <div class="row my-4">
+    <div *ngFor="let movie of movies.slice(0,18)" class="col-lg-2 col-md-4 col-6">
+      <app-movie-card [movie]="movie"></app-movie-card>></div>
+  </div>
+  <div class="d-flex my-4 justify-content-center align-items-center">
+    <nav class=" " aria-label="Page navigation example">
+      <ul class="pagination m-0">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item"><a class="page-link" href="#">6</a></li>
+        <li class="page-item"><a class="page-link" href="#">7</a></li>
+        <li class="page-item"><a class="page-link" href="#">8</a></li>
+        <li class="page-item"><a class="page-link" href="#">9</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
